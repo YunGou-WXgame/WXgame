@@ -5,6 +5,7 @@ SECRET_KEY = "django-insecure-89!*@z!wy+c=zbyl8*ra&^%wcr(!c9pu4b-1e)o!7&ek4#4y3u
 DEBUG = True
 ALLOWED_HOSTS = []
 INSTALLED_APPS = [
+    "simpleui",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -42,10 +43,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "WXgame.wsgi.application"
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
+   'default': {
+       'ENGINE': 'django.db.backends.mysql', # 使用 MySQL 数据库引擎
+       'NAME': 'game', # 数据库名称
+       'USER': 'root',  # 数据库用户名
+       'PASSWORD': '123456',  # 数据库密码
+       'HOST': 'localhost', # 数据库地址
+       'PORT': 3306, # 数据库端口
+   }
 }
 
 AUTH_PASSWORD_VALIDATORS = [
